@@ -1,0 +1,21 @@
+package kr.hs.study.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class MemberController {
+	@GetMapping("/member")
+	public String member() {
+		return "member/input";
+	}
+
+	@PostMapping("/member_result")
+	public String gugu_re(@RequestParam int dan, Model model) {
+		System.out.println("member");
+		return "member/result";
+	}
+}

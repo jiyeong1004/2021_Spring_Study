@@ -1,0 +1,5 @@
+package kr.hs.study.model.dao;
+
+public interface MemberDAO {
+
+}

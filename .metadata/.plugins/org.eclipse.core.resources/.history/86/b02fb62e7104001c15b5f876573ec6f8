@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="member">
+ <insert id="insert" parameterType="kr.hs.study.model.dto.MemberDTO">
+	insert into member1 (userid, passwd, name, email, join_date) 
+	values(#{userid}, #{passwd}, #{name}, #{email}, #{join_date})
+  </insert>
+  
+  <select id="list" parameterType="kr.hs.study.model.dto.MemberDTO">
+  select userid, name, email, join_date
+  from member
+  order by desc name;
+  </select>
+</mapper>

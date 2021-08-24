@@ -1,0 +1,26 @@
+package kr.hs.study.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class GuguController {
+	@GetMapping("/gugu")
+	public String gugu() {
+		return "gugu/input";
+	}
+
+	@PostMapping("/gugu_result")
+	public String gugu_re(@RequestParam int dan, Model model) {
+		String result = "";
+		for(int i = 1; i <= 9; i++) {
+			result += dan + " * " + i + " = " + dan * i; 
+		}
+		model.addAllAttributes("re", result);
+		System.out.println("gugu");
+		return "gugu/result";
+	}
+}

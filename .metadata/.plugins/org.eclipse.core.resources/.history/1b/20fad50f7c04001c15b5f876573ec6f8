@@ -1,0 +1,18 @@
+package kr.hs.study.model.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import kr.hs.study.model.dto.MemberDTO;
+
+public class MemberDAO interface MemberDAO {
+	
+	public List<MemberDTO> list();  // select
+
+	public void insert(MemberDTO dto);  // insert
+
+	public MemberDTO read(String userid);  // select where userid=
+}
